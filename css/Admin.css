@@ -19,6 +19,7 @@
 /* css menu */
 .menu{
     border-bottom: 1px solid grey;
+    background-color: rgb(245, 80, 146);
 }
 .menu ul{
     list-style-type: none;
@@ -30,10 +31,10 @@
 .menu ul li a{
     text-decoration: none;
     font-weight: bold;
-    color:rgb(248, 100, 100);
+    color:rgb(29, 20, 41);
 }
 .menu ul li a:hover{
-    color:rgb(233, 78, 78);
+    color:rgb(229, 227, 239);
 }
 .tbl-full{
     width: 100%;
@@ -88,7 +89,7 @@ table tr td{
  }
 /* css for .main-content */
 .main-content{
-    background-color:rgb(219, 208, 208);
+    background-color:rgb(240, 201, 205);
     padding: 3% 0;
 }
 .col-4{
@@ -99,7 +100,7 @@ table tr td{
     float: left;
 }
 .footer{
-    background-color:rgb(212, 76, 76);
+    background: -webkit-linear-gradient(rgb(245, 80, 146), rgb(193, 167, 197));
     color: white;
 }
 

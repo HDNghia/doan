@@ -16,8 +16,8 @@
                     </tr>
                     <tr>
                         <td>1.</td>
-                        <td>Vijay Thapa</td>
-                        <td>Vijaythapa</td>
+                        <td>Dua hau</td>
+                        <td>Dua hau</td>
                         <td>
                             <a href="#" class="btn-secondary">Update Admin</a>
                             <a href="#" class="btn-danger">Delete Admin</a>
@@ -25,8 +25,8 @@
                     </tr>
                     <tr>
                         <td>2.</td>
-                        <td>Vijay Thapa</td>
-                        <td>Vijaythapa</td>
+                        <td>Dua hau</td>
+                        <td>Dua hau</td>
                         <td>
                             <a href="#" class="btn-secondary">Update Admin</a>
                             <a href="#" class="btn-danger">Delete Admin</a>
@@ -34,8 +34,8 @@
                     </tr>
                     <tr>
                         <td>3.</td>
-                        <td>Vijay Thapa</td>
-                        <td>Vijaythapa</td>
+                        <td>Dua hau</td>
+                        <td>Dua hau</td>
                         <td>
                             <a href="#" class="btn-secondary">Update Admin</a>
                             <a href="#" class="btn-danger">Delete Admin</a>

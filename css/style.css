@@ -10,6 +10,7 @@
     padding: 0 0;
     font-family: Arial, Helvetica, sans-serif;
 }
+
 .container{
     width: 80%;
     margin: 0 auto;
@@ -93,6 +94,7 @@ fieldset{
     width: 10%;
     float: left;
 }
+
 .menu{
     line-height: 60px;
 }
@@ -110,7 +112,7 @@ fieldset{
 /* CSS for Food SEarch Section */
 
 .food-search{
-    background-image: url(../images/bg.jpg);
+    background-image: url(../images/pngtree-food-spicy-and-seductive-lobster-shellfish-chinese-meal-background-image_6705.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
