@@ -1,4 +1,4 @@
-<?php include('partials/menu.php') ?>
+<?php include('partials/menu.php'); ?>
 
 <div class="main-content">
     <div class="wrapper">
@@ -40,21 +40,21 @@
                 </tr>
 
                 <tr>
-                    <td>Selecrt Image: </td>
+                    <td>Select Image: </td>
                     <td>
                         <input type="file" name="image">
                     </td>
                 </tr>
 
                 <tr>
-                    <td>Categore: </td>
+                    <td>Category: </td>
                     <td>
                         <select name="category">
 
                             <?php
                                 //Create PHP code to display categories from database
                                 //1. create sql to get all active categories from database
-                                $sql = "SELECT * FROM tbl-category WHERE active='Yes'";
+                                $sql = "SELECT * FROM tbl_category WHERE active='Yes'";
                                 
                                 //Executing query
                                 $res = mysqli_query($conn, $sql);
@@ -171,7 +171,7 @@
                         //get the extension of selected image (jpg,png,gif,etc.)  
                         $ext = end(explode('.',$image_name));
                         //create new name for image
-                        $image_name = "Food-name-".rand(0000,9999).".".$ext; // new image name may be "food-name-657.jpg"
+                        $image_name = "Food-Name-".rand(0000,9999).".".$ext; // new image name may be "food-name-657.jpg"
 
                         //b. upload the image
                         //get the src path and description path
@@ -191,7 +191,7 @@
                             //failed to upload the image
                             //redirect to add food page with error message
                             $_SESSION['upload'] = "<div class='error'>Failed to Upload Image.</div>";
-                            header('location: '.SITEURL.'admin/add-food.php');
+                            header('location:'.SITEURL.'admin/add-food.php');
                             //stop the process
                             die();
                         }
@@ -210,15 +210,15 @@
                 $sql2 = "INSERT INTO tbl_food SET
                     title = '$title',
                     description = '$description',
-                    price = '$price',
+                    price = $price,
                     image_name = '$image_name',
                     category_id = $category,
                     featured = '$featured',
-                    acitve = '$active'
+                    active = '$active'
                 ";
 
                 //execute the query
-                $res2 = mysqli_query($conn, $sql);
+                $res2 = mysqli_query($conn, $sql2);
                 // check whether data inserted or not
                 //4. Redirect with message to mana food page
 
@@ -227,13 +227,13 @@
                 {
                     //date inserted successfully
                     $_SESSION['add'] = "<div class='success'>Food added successfully.</div>";
-                    header('location: '.SITEURL.'admin/manage-food.php');
+                    header('location:'.SITEURL.'admin/manage-food.php');
                 }
                 else
                 {
                     //failed to insert data
                     $_SESSION['add'] = "<div class='error'>Failes to Add Food.</div>";
-                    header('location: '.SITEURL.'admin/manage-food.php');
+                    header('location:'.SITEURL.'admin/manage-food.php');
                 }
 
                 

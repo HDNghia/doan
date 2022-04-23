@@ -61,7 +61,7 @@ else
                 <tr>
                     <td>Price: </td>
                     <td>
-                        <input type="number" name="price" value=<?php echo $price; ?>>
+                        <input type="number" name="price" value="<?php echo $price; ?>">
                     </td>
                 </tr>
 
@@ -72,7 +72,7 @@ else
                             if($current_image == "")
                             {
                                 //Image not available
-                                echo "<div class-'error'>Image not Available.</div>";
+                                echo "<div class='error'>Image not Available.</div>";
                             }
                             else
                             {
@@ -93,13 +93,13 @@ else
                 </tr>
 
                 <tr>
-                    <td>Categore: </td>
+                    <td>Category: </td>
                     <td>
                         <select name="category">
 
                             <?php
                             //Query to Get Active Categories
-                                $sql = "SELECT * FROM tbl_category WHERE actuve='Yes'";
+                                $sql = "SELECT * FROM tbl_category WHERE active='Yes'";
                             //Execute the Query
                             $res = mysqli_query($conn, $sql);
                             //Count rows
@@ -116,7 +116,7 @@ else
                                     
                                     //echo "<option value='$category_id'>$category_title</option>";
                                     ?>
-                                        <option <?php if($current_category==$category_id){echo "selected";}?> value="<?php echo $id; ?>"><?php echo $category_title; ?></option>
+                                        <option <?php if($current_category==$category_id){echo "selected";} ?> value="<?php echo $category_id; ?>"><?php echo $category_title; ?></option>
                                     <?php
                                 }
                             }
@@ -129,7 +129,7 @@ else
                             ?>
                             
 
-                            <option value="0">Test Category</option>
+                            <!-- <option value="0">Test Category</option> -->
 
                         </select>
                     </td>
@@ -138,8 +138,8 @@ else
                 <tr>
                     <td>Featured: </td>
                     <td>
-                        <input <?php if($featured=="Yes") {echo"checked";}?> type="radio" name="featured" value="Yes">Yes
-                        <input <?php if($featured=="No") {echo "checked";}?> type="radio" name="featured" value="No">No
+                        <input <?php if($featured=="Yes") {echo"checked";} ?> type="radio" name="featured" value="Yes">Yes
+                        <input <?php if($featured=="No") {echo "checked";} ?> type="radio" name="featured" value="No">No
 
                     </td>
                 </tr>
@@ -147,8 +147,8 @@ else
                 <tr>
                     <td>Active: </td>
                     <td>
-                        <input <?php if($active=="Yes") {echo "checked";}?> type="radio" name="active" value="Yes">Yes
-                        <input <?php if($active=="No") {echo "checked";}?> type="radio" name="active" value="No">No
+                        <input <?php if($active=="Yes") {echo "checked";} ?> type="radio" name="active" value="Yes">Yes
+                        <input <?php if($active=="No") {echo "checked";} ?> type="radio" name="active" value="No">No
 
                     </td>
                 </tr>
@@ -201,7 +201,7 @@ else
                         //Rename the image
                         $ext = end(explode('.', $image_name)); //Gets the extention of the image
 
-                        $image_name + "Food-Name-".rand(0000,9999).'.'.$ext; //This will be renamed image
+                        $image_name = "Food-Name-".rand(0000,9999).'.'.$ext; //This will be renamed image
 
                         //Get the source path and destination path
                         $src_path = $_FILES['image']['tmp_name']; //Source path
@@ -252,7 +252,7 @@ else
                 //4. Update the Food in database
                 $sql3 = "UPDATE tbl_food SET
                     title = '$title',
-                    description = 'description',
+                    description = '$description',
                     price = $price,
                     image_name = '$image_name',
                     category_id = '$category',

@@ -1,5 +1,5 @@
 <?php
-    //Include XOnstants Page
+    //Include constants Page
     include('../config/constants.php');
 
     //echo "Delete Food pahe";
@@ -26,13 +26,14 @@
 
             //check whether the image is removed or not
             if($remove==false)
-
+            {
             //failed to remove image
             $_SESSION['upload'] = "<div class='error'>Failed to Remove Image File.</div>";
             //Redirect to Manage food
             header('location:'.SITEURL.'admin/manage-food.php');
             //Stop the process of deteling food
             die();
+            }
         }
 
         //3. Detele food from database
@@ -51,7 +52,7 @@
         else
         {
             //failed to detele food
-            $_SESSION['delete'] = "<div class='error'>Failed to Detele Food</div>";
+            $_SESSION['delete'] = "<div class='error'>Failed to Detele Food.</div>";
             header('location:'.SITEURL.'admin/manage-food.php');
         }
         
@@ -61,7 +62,7 @@
     {
         //Redirect to manage food page
         //echo "REdirect";
-        $_SESSIONP['unauthoruze'] = "<div class='error'>Unauthorized Access.</div>";
+        $_SESSION['unauthorize'] = "<div class='error'>Unauthorized Access.</div>";
         header('location:'.SITEURL.'admin/manage-food.php');
     }
 

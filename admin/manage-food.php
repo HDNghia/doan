@@ -17,8 +17,8 @@
 
                     if(isset($_SESSION['delete']))
                     {
-                        echo $_SESSION['detele'];
-                        unset($_SESSION['detele']);
+                        echo $_SESSION['delete'];
+                        unset($_SESSION['delete']);
                     }
 
                     if(isset($_SESSION['upload']))
@@ -48,7 +48,7 @@
                         <th>Image</th>
                         <th>Featured</th>
                         <th>Active</th>
-                        <th>Action</th>
+                        <th>Actions</th>
                     </tr>
 
                     <?php 
@@ -74,7 +74,8 @@
                                 $id = $row['id'];
                                 $title = $row['title'];
                                 $price = $row['price'];
-                                $image_name = $row['featured'];
+                                $image_name = $row['image_name'];
+                                $featured = $row['featured'];
                                 $active = $row['active'];
                                 ?>
                                     <tr>
@@ -87,7 +88,7 @@
                                                 if($image_name=="")
                                                 {
                                                     //we do not have image, display error message
-                                                    echo "<dive class='error'>Image not Added.</div>";
+                                                    echo "<div class='error'>Image not Added.</div>";
                                                 }
                                                 else
                                                 {
