@@ -22,7 +22,7 @@ if(isset($_GET['id']))
     $current_image = $row2['image_name'];
     $current_category = $row2['category_id'];
     $featured = $row2['featured'];
-    $active = $row2['active'];
+    
 }
 else
 {
@@ -92,48 +92,7 @@ else
                     </td>
                 </tr>
 
-                <tr>
-                    <td>Category: </td>
-                    <td>
-                        <select name="category">
-
-                            <?php
-                            //Query to Get Active Categories
-                                $sql = "SELECT * FROM tbl_category WHERE active='Yes'";
-                            //Execute the Query
-                            $res = mysqli_query($conn, $sql);
-                            //Count rows
-                            $count = mysqli_num_rows($res);
-
-                            //Check whether category available or not
-                            if($count>0)
-                            {
-                                //Category Available
-                                while($row=mysqli_fetch_assoc($res))
-                                {
-                                    $category_title = $row['title'];
-                                    $category_id = $row['id'];
-                                    
-                                    //echo "<option value='$category_id'>$category_title</option>";
-                                    ?>
-                                        <option <?php if($current_category==$category_id){echo "selected";} ?> value="<?php echo $category_id; ?>"><?php echo $category_title; ?></option>
-                                    <?php
-                                }
-                            }
-                            else
-                            {
-                                //Category not available
-                                echo "<option value='0'>Category Not Available.</option>";
-                            }
-                            
-                            ?>
-                            
-
-                            <!-- <option value="0">Test Category</option> -->
-
-                        </select>
-                    </td>
-                </tr>
+                
 
                 <tr>
                     <td>Featured: </td>
@@ -144,14 +103,7 @@ else
                     </td>
                 </tr>
 
-                <tr>
-                    <td>Active: </td>
-                    <td>
-                        <input <?php if($active=="Yes") {echo "checked";} ?> type="radio" name="active" value="Yes">Yes
-                        <input <?php if($active=="No") {echo "checked";} ?> type="radio" name="active" value="No">No
-
-                    </td>
-                </tr>
+               
 
                 <tr>
                     <td>
@@ -182,7 +134,7 @@ else
                 $category = $_POST['category'];
 
                 $featured = $_POST['featured'];
-                $active = $_POST['active'];
+                
                 
                 //2. Upload the image if selected
 
@@ -241,10 +193,14 @@ else
                             }
                         }
                     }
+                    else
+                    {
+                        $image_name = $current_image; //Default image when image is not selected
+                    }
                 }
                 else
                 {
-                    $image_name = $current_image;
+                    $image_name = $current_image; //Default image when button is not clicked
                 }
 
                 

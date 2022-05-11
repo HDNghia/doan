@@ -201,7 +201,6 @@
                 {
                     $image_name = ""; //setting default value as blank
                 }
-
                 //3. Insert into database
 
                 //create a sql query to save or add food
@@ -216,7 +215,6 @@
                     featured = '$featured',
                     active = '$active'
                 ";
-
                 //execute the query
                 $res2 = mysqli_query($conn, $sql2);
                 // check whether data inserted or not
