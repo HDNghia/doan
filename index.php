@@ -18,29 +18,50 @@
     <div class="container">
         <h2 class="text-center">Mon ngon</h2>
 
-        <a href="category-foods.html">
-            <div class="box-3 float-container">
-                <img src="https://i.pinimg.com/564x/05/58/14/0558149ae0df467339948f61f9449548.jpg" alt="Pizza" class="img-responsive img-curve">
+        <?php
+        //create SQL query to display categories from database
+        $sql = "SELECT * FROM tbl_category WHERE active='yes' AND featured = 'yes' limit 3";
+        //excute the Query
+        $res =  mysqli_query($conn, $sql);
+        //Count rows to check whether the category is available or not
+        $count = mysqli_num_rows($res);
+        //Check whether food available or not
+        if ($count > 0) {
+            //category Avallable
+            while ($row = mysqli_fetch_assoc($res)) {
+                //Get all the values
+                $id = $row['id'];
+                $title = $row['title'];
+                $image_name = $row['image_name'];
+        ?>
+                <a href="category-foods.html">
+                    <div class="box-3 float-container">
+                    <?php 
+                                    //check whether image available or not
+                                    if($image_name=="")
+                                    {
+                                        //image not available
+                                        echo "<div class='error'>Image not available.</div>";
+                                    }
+                                    else
+                                    {
+                                        //image available
+                                        ?>
+                                            <img src="<?php echo SITEURL;?>images/category/<?php echo $image_name; ?>" class="img-responsive img-curve">
+                                        <?php
+                                    }
+                        ?>
 
-                <h3 class="float-text text-white">Pho</h3>
-            </div>
-        </a>
+                        <h3 class="float-text text-white"> <?php echo $title; ?></h3>
+                    </div>
+                </a>
 
-        <a href="#">
-            <div class="box-3 float-container">
-                <img src="https://i.pinimg.com/564x/75/bb/8b/75bb8b06df6aae2175f3e9befb294328.jpg" alt="Burger" class="img-responsive img-curve">
+        <?php
+            }
+        }
+        ?>
 
-                <h3 class="float-text text-white">Bun bo</h3>
-            </div>
-        </a>
 
-        <a href="#">
-            <div class="box-3 float-container">
-                <img src="https://i.pinimg.com/564x/71/e8/0f/71e80ff7c6448584ca8d28c07f97de35.jpg" alt="Momo" class="img-responsive img-curve">
-
-                <h3 class="float-text text-white">Banh xeo</h3>
-            </div>
-        </a>
 
         <div class="clearfix"></div>
     </div>
@@ -62,8 +83,7 @@
         //Check whether food available or not
         if ($count2 > 0) {
             //Food Avallable
-            while ($row = mysqli_fetch_assoc($res2)) 
-            {
+            while ($row = mysqli_fetch_assoc($res2)) {
                 //Get all the values
                 $id = $row['id'];
                 $title = $row['title'];
@@ -75,22 +95,19 @@
 
                 <div class="food-menu-box">
                     <div class="food-menu-img">
-                        <?php 
-                            //check whether image available or not
-                            if($image_name=="")
-                            {
-                                //image not available
-                                echo "<div class='error'>Image not available.</div>";
-                            }
-                            else
-                            {
-                                //image available
-                                ?>
-                                    <img src="<?php echo SITEURL;?>images/food/<?php echo $image_name; ?>" class="img-responsive img-curve">
-                                <?php
-                            }
+                        <?php
+                        //check whether image available or not
+                        if ($image_name == "") {
+                            //image not available
+                            echo "<div class='error'>Image not available.</div>";
+                        } else {
+                            //image available
                         ?>
-            
+                            <img src="<?php echo SITEURL; ?>images/food/<?php echo $image_name; ?>" class="img-responsive img-curve">
+                        <?php
+                        }
+                        ?>
+
                     </div>
                     <div class="food-menu-desc">
                         <h4><?php echo $title; ?></h4>

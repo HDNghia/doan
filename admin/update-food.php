@@ -102,9 +102,6 @@ else
 
                     </td>
                 </tr>
-
-               
-
                 <tr>
                     <td>
                         <input type="hidden" name="id" value="<?php echo $id; ?>">
@@ -132,9 +129,7 @@ else
                 $price = $_POST['price'];
                 $current_image = $_POST['current_image'];
                 $category = $_POST['category'];
-
                 $featured = $_POST['featured'];
-                
                 
                 //2. Upload the image if selected
 
@@ -213,7 +208,6 @@ else
                     image_name = '$image_name',
                     category_id = '$category',
                     featured = '$featured',
-                    active = '$active'
                     WHERE id=$id
                 ";
 
