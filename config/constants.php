@@ -2,7 +2,7 @@
     //start session
     session_start();
 
-    define('SITEURL', 'http://localhost:8888/food-order/');
+    define('SITEURL', 'http://localhost:/food-order/');
     define('LOCALHOST', 'localhost');
     define('DB_USERNAME', 'root');
     define('DB_PASSWORD', '');

@@ -67,7 +67,7 @@
                                 </p>
                                 <br>
         
-                                <a href="order.html" class="btn btn-primary">Đặt món</a>
+                                <a href="<?php echo SITEURL; ?>order.php?food_id=<?php echo $id; ?>" class="btn btn-primary">Đặt món</a>
                             </div>
                         </div>
         
