@@ -7,8 +7,9 @@
     <!-- Important to make website responsive -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Restaurant Website</title>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <!-- Link our CSS file -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -34,7 +35,10 @@
                         <a href="<?php echo SITEURL; ?>foods.php">Foods</a>
                     </li>
                     <li>
-                        <a href="#">Contact</a>
+                        <a href="<?php echo SITEURL; ?>cart.php"><i class="fa fa-shopping-cart fa-lg" aria-hidden="true"></i></a>
+                    </li>
+                    <li>
+                        <a href="#contact"><i class="fa fa-phone-square fa-lg" aria-hidden="true"></i></a>
                     </li>
                 </ul>
             </div>

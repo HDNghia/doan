@@ -20,7 +20,7 @@
                 $title = $row['title'];
                 $image_name = $row['image_name'];
         ?>
-                <a href="category-foods.html">
+                <a href="category-foods.php">
                     <div class="box-3 float-container">
                     <?php 
                                     //check whether image available or not

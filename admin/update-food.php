@@ -22,7 +22,7 @@ if(isset($_GET['id']))
     $current_image = $row2['image_name'];
     $current_category = $row2['category_id'];
     $featured = $row2['featured'];
-    
+    $active = $row2['active'];
 }
 else
 {
@@ -91,7 +91,52 @@ else
                         <input type="file" name="image">
                     </td>
                 </tr>
+                <tr>
+                    <td>Category: </td>
+                    <td>
+                        <select name="category">
 
+                            <?php
+                                //Create PHP code to display categories from database
+                                //1. create sql to get all active categories from database
+                                $sql = "SELECT * FROM tbl_category WHERE active='Yes'";
+                                
+                                //Executing query
+                                $res = mysqli_query($conn, $sql);
+
+                                //Count rows to check whether we have categories or not
+                                $count = mysqli_num_rows($res);
+
+                                //check whether category available or not
+                                if($count>0)
+                                {
+                                    //category available
+                                    while($row=mysqli_fetch_assoc($res))
+                                    {
+                                        //category Available
+                                        $category = $row['title'];
+                                        $category_id = $row['id'];
+                                        ?>
+                                            <option <?php if($current_category==$category_id){echo "selected";} ?> value="<?php echo $category_id; ?>"><?php echo $category; ?></option>
+
+                                        <?php
+                                    }
+
+                                }
+                                else
+                                {
+                                    //we do not have category
+                                    ?>
+                                    <option value="0">No category Found</option>
+                                    <?php
+                                }
+
+                            ?>
+
+
+                        </select>
+                    </td>
+                </tr>
                 
 
                 <tr>
@@ -99,6 +144,13 @@ else
                     <td>
                         <input <?php if($featured=="Yes") {echo"checked";} ?> type="radio" name="featured" value="Yes">Yes
                         <input <?php if($featured=="No") {echo "checked";} ?> type="radio" name="featured" value="No">No
+                    </td>
+                </tr>
+                <tr>
+                    <td>Active: </td>
+                    <td>
+                    <input <?php if($active=="Yes") {echo"checked";} ?> type="radio" name="active" value="Yes">Yes
+                        <input <?php if($active=="No") {echo "checked";} ?> type="radio" name="active" value="No">No
 
                     </td>
                 </tr>
@@ -130,7 +182,8 @@ else
                 $current_image = $_POST['current_image'];
                 $category = $_POST['category'];
                 $featured = $_POST['featured'];
-                
+                $active = $_POST['active'];
+
                 //2. Upload the image if selected
 
                 //check whether upload button is clicked or not
@@ -208,6 +261,7 @@ else
                     image_name = '$image_name',
                     category_id = '$category',
                     featured = '$featured',
+                    active='$active'
                     WHERE id=$id
                 ";
 

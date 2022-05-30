@@ -1,5 +1,5 @@
 <!-- social Section Starts Here -->
-<section class="social">
+<section class="social" id="contact">
         <div class="container text-center">
             <ul>
                 <li>
