@@ -88,6 +88,11 @@
 
                             ?>
 
+<<<<<<< Updated upstream
+=======
+                            <option value="1">Bánh</option>
+                            <option value="2">Mỳ</option>
+>>>>>>> Stashed changes
 
                         </select>
                     </td>
@@ -207,7 +212,7 @@
                 $sql2 = "INSERT INTO tbl_food SET
                     title = '$title',
                     description = '$description',
-                    price = $price,
+                    price = $price*1000,
                     image_name = '$image_name',
                     category_id = $category,
                     featured = '$featured',

@@ -129,7 +129,7 @@
                             $ext=end(explode('.', $image_name));
 
                             //rename the image
-                            $image_name = "Food_Category_".rand(000,999).'.'.$ext;
+                            $image_name = "Food-Category-".rand(0000,9999).'.'.$ext;
     
                             $source_path=$_FILES['image']['tmp_name'];
     

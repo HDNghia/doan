@@ -17,7 +17,7 @@
     <!-- social Section Ends Here -->
 
     <!-- footer Section Starts Here -->
-    <section class="footer">
+    <section class="footer" id="contact">
         <div class="container text-center">
             <p>Designed By <a href="#">Dua hau</a></p>
         </div>

@@ -81,7 +81,11 @@
                                     <tr>
                                         <td><?php echo $sn++; ?></td>
                                         <td><?php echo $title; ?></td>
+<<<<<<< Updated upstream
                                         <td><?php echo $price; ?></td>
+=======
+                                        <td><?php echo $price; ?> VND</td>
+>>>>>>> Stashed changes
                                         <td>
                                             <?php 
                                                 //check whether we have image or not

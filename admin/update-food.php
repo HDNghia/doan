@@ -149,11 +149,21 @@ else
                 <tr>
                     <td>Active: </td>
                     <td>
+<<<<<<< Updated upstream
                     <input <?php if($active=="Yes") {echo"checked";} ?> type="radio" name="active" value="Yes">Yes
                         <input <?php if($active=="No") {echo "checked";} ?> type="radio" name="active" value="No">No
 
                     </td>
                 </tr>
+=======
+                        <input <?php if($active=="Yes") {echo"checked";} ?> type="radio" name="active" value="Yes">Yes
+                        <input <?php if($active=="No") {echo "checked";} ?> type="radio" name="active" value="No">No
+
+                    </td>
+                </tr>            
+               
+
+>>>>>>> Stashed changes
                 <tr>
                     <td>
                         <input type="hidden" name="id" value="<?php echo $id; ?>">
@@ -181,6 +191,10 @@ else
                 $price = $_POST['price'];
                 $current_image = $_POST['current_image'];
                 $category = $_POST['category'];
+<<<<<<< Updated upstream
+=======
+                $active = $_POST['active'];
+>>>>>>> Stashed changes
                 $featured = $_POST['featured'];
                 $active = $_POST['active'];
 

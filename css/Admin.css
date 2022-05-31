@@ -42,6 +42,11 @@
 .tbl-30{
     width: 30%;
 }
+table{
+    border: 1px solid black;
+    border-radius: 5px 5px 5px 5px;
+    box-shadow: 10px 10px 5px #888888;
+}
 table tr th{
     border-bottom: 1px solid black;
     padding: 1%;
@@ -56,6 +61,7 @@ table tr td{
     color: white;
     text-decoration: none;
     font-weight: bold;
+    border-radius: 5px 5px 5px 5px;
 }
 .btn-primary:hover{
     background-color: rgb(58, 55, 245);
@@ -67,6 +73,7 @@ table tr td{
     color: white;
     text-decoration: none;
     font-weight: bold;
+    border-radius: 5px 5px 5px 5px;
 }
 .btn-secondary:hover{
     background-color: rgb(78, 235, 39);
@@ -77,6 +84,7 @@ table tr td{
     color: white;
     text-decoration: none;
     font-weight: bold;
+    border-radius: 5px 5px 5px 5px;
 }
 .btn-danger:hover{
     background-color: rgb(233, 41, 41);

@@ -43,6 +43,7 @@
                         <th>S.N.</th>
                         <th>Full Name</th>
                         <th>Username</th>
+                        <th>Active</th>
                         <th>Actions</th>
                     </tr>
                     <?php 

@@ -105,8 +105,13 @@
                     </div>
                     <div class="food-menu-desc">
                         <h4><?php echo $title; ?></h4>
+<<<<<<< Updated upstream
                         <p class="food-price"><?php echo $price; ?>VND</p>
                        
+=======
+                        <p class="food-price"><?php echo $price; ?> VND</p>
+                        
+>>>>>>> Stashed changes
                         <form action="cart.php" method="post">
                         <input type="number" name="soluong" id="soluong" min="1" max="10" value="1" ><br><br>
                             <input type="submit" name="addcart" value="Add cart" class=" btn-cart" style="float: left; margin-top: -4px">
@@ -115,11 +120,15 @@
                             <input type="hidden" name="hinh" id="hinh" value="<?php echo $image_name; ?> ">
                         </form>
                         <a href="<?php echo SITEURL; ?>order.php?food_id=<?php echo $id ?>" class="btn btn-primary" style="margin-left: 4px">Order now</a>
+<<<<<<< Updated upstream
                         <div class="clearfix"></div>
+=======
+>>>>>>> Stashed changes
                         
                     </div>
+                    <div class="clearfix"></div>
                 </div>
-
+            
         <?php
             }
         } else {
@@ -127,14 +136,8 @@
             echo "<div class='error'>Food not available</div>";
         }
         ?>
-
-
-        <div class="clearfix"></div>
-
-
-
     </div>
-
+    <div class="clearfix"></div>
 
     <p class="text-center">
         <a href="#">See All Foods</a>

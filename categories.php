@@ -1,6 +1,6 @@
 <?php include('partials-front/menu.php'); ?>
     <!-- CAtegories Section Starts Here -->
-    <section class="categories">
+    <section class="categories food-menu">
         <div class="container">
             <h2 class="text-center">Mon ngon</h2>
 
