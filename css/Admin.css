@@ -115,7 +115,15 @@ table tr td{
 /* css for login */
 .login{
     border: 1px solid grey;
+    background-image: url("https://www.sss-solutions.org/wp-content/uploads/2018/01/1116146294-login-page-background-image-112.jpg");
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px rgb(81, 79, 79);
     width: 30%;
     margin: 5% auto;
     padding: 2%;
+}
+.page-login{
+    background-image: url("https://wallpapercave.com/wp/wp1874182.jpg");
+    background-size: 100%;
+    background-repeat: no-repeat;
 }

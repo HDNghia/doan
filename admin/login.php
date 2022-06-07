@@ -7,8 +7,7 @@
     <link rel="stylesheet" href="../css/Admin.css">
 </head>
 
-<body>
-
+<body class="page-login">
     <div class="login">
         <h1 class="text-center">Login</h1>
         <br><br>
@@ -26,7 +25,7 @@
 
         <br><br>
         <!-- login Form Starts Here -->
-        <form action="" method="POST" class="text-center">
+        <form action="" method="POST" class="text-center " >
             Username:<br>
             <input type="text" name="username" placeholder="Enter Username"><br><br>
             Password: <br>
@@ -35,7 +34,7 @@
             <br><br>
         </form>
         <!-- Login Forn Ends HEre -->
-        <p class="text-center">Created By <a href="www.nghia.com">nghia</a></p>
+        <p class="text-center">Created By <a href="www.nghia.com">Dưa hấu</a></p>
     </div>
 
 </body>
@@ -66,7 +65,7 @@ if (isset($_POST['submit'])) {
         $_SESSION['user'] = $username; //to check whether the user is logged in or not and logout will unset it
 
         //REdirect to HOne Page/Dashboard
-        header('location:' . SITEURL . 'admin/');
+        header('location:' . SITEURL . 'admin/manage-admin.php');
     } else {
         //user not Avalable and togin FA
         $_SESSION['login'] = "<div class='error text-center'>Username or Password did not match.</div>";

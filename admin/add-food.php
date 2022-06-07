@@ -88,12 +88,6 @@
 
                             ?>
 
-<<<<<<< Updated upstream
-=======
-                            <option value="1">Bánh</option>
-                            <option value="2">Mỳ</option>
->>>>>>> Stashed changes
-
                         </select>
                     </td>
                 </tr>
