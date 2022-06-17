@@ -85,7 +85,7 @@
                                         <td>
                                             <?php 
                                                 //check whether we have image or not
-                                                if($image_name=="")
+                                                if($image_name =="")
                                                 {
                                                     //we do not have image, display error message
                                                     echo "<div class='error'>Image not Added.</div>";

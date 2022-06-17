@@ -64,14 +64,18 @@
             </div>
 
             <div class="food-menu-desc">
-                <h4><?php echo $title; ?></h4>
-                <p class="food-price"><?php echo $price;?>VND</p>
-                <p class="food-detail">
-                    <?php echo $description; ?>
-                </p>
-                <br>
-
-                <a href="#" class="btn btn-primary">Order Now</a>
+                        <h4><?php echo $title; ?></h4>
+                        <p class="food-price"><?php echo $price; ?> VND</p>
+                        
+                        <form action="cart.php" method="post">
+                        <input type="number" name="soluong" id="soluong" min="1" max="10" value="1" ><br><br>
+                            <input type="submit" name="addcart" value="Add cart" class=" btn-cart" style="float: left; margin-top: -4px">
+                            <input type="hidden" name="tensp" id="tensp" value="<?php echo $title; ?>">
+                            <input type="hidden" name="gia" id="gia" value="<?php echo $price; ?>">
+                            <input type="hidden" name="hinh" id="hinh" value="<?php echo $image_name; ?> ">
+                        </form>
+                        <a href="<?php echo SITEURL; ?>order.php?food_id=<?php echo $id ?>" class="btn btn-primary" style="margin-left: 4px">Order now</a>
+                        
             </div>
         </div>
 

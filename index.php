@@ -74,7 +74,6 @@
 <section class="food-menu">
     <div class="container">
         <h2 class="text-center">Menu</h2>
-
         <?php
         //Getting Foods from Database that are active and featured
         $sql2 = "SELECT * FROM tbl_food where active='Yes' AND featured='Yes' LIMIT 6";
